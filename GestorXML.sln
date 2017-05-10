@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{2FA5227C-44C7-41F7-B0E5-8AFE32991BC8}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup XML", "Setup XML\Setup XML.vdproj", "{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,17 +41,6 @@ Global
 		{2FA5227C-44C7-41F7-B0E5-8AFE32991BC8}.Release|x64.Build.0 = Release|x64
 		{2FA5227C-44C7-41F7-B0E5-8AFE32991BC8}.Release|x86.ActiveCfg = Release|Any CPU
 		{2FA5227C-44C7-41F7-B0E5-8AFE32991BC8}.Release|x86.Build.0 = Release|Any CPU
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|Any CPU.ActiveCfg = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|x64.ActiveCfg = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|x64.Build.0 = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|x86.ActiveCfg = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|x86.Build.0 = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Debug|x86.Deploy.0 = Debug
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Release|Any CPU.ActiveCfg = Release
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Release|x64.ActiveCfg = Release
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Release|x64.Build.0 = Release
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Release|x86.ActiveCfg = Release
-		{605A3A9F-1C0C-4EBC-94B6-F3272113BD15}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
