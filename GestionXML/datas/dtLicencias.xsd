@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtLicencias" targetNamespace="http://tempuri.org/dtLicencias.xsd" xmlns:mstns="http://tempuri.org/dtLicencias.xsd" xmlns="http://tempuri.org/dtLicencias.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtLicencias" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtLicencias" msprop:Generator_UserDSName="dtLicencias">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_licencias" msprop:Generator_ColumnVarNameInTable="columnid_licencias" msprop:Generator_ColumnPropNameInRow="id_licencias" msprop:Generator_ColumnPropNameInTable="id_licenciasColumn" msprop:Generator_UserColumnName="id_licencias" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_licencias" msprop:Generator_ColumnVarNameInTable="columndescripcion_licencias" msprop:Generator_ColumnPropNameInRow="descripcion_licencias" msprop:Generator_ColumnPropNameInTable="descripcion_licenciasColumn" msprop:Generator_UserColumnName="descripcion_licencias" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad_licencias" msprop:Generator_ColumnVarNameInTable="columncantidad_licencias" msprop:Generator_ColumnPropNameInRow="cantidad_licencias" msprop:Generator_ColumnPropNameInTable="cantidad_licenciasColumn" msprop:Generator_UserColumnName="cantidad_licencias" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_licencias_registradas" msprop:Generator_ColumnVarNameInTable="columnnumero_licencias_registradas" msprop:Generator_ColumnPropNameInRow="numero_licencias_registradas" msprop:Generator_ColumnPropNameInTable="numero_licencias_registradasColumn" msprop:Generator_UserColumnName="numero_licencias_registradas" type="xs:string" minOccurs="0" />
+              <xs:element name="total_licencias_compradas" msprop:Generator_ColumnVarNameInTable="columntotal_licencias_compradas" msprop:Generator_ColumnPropNameInRow="total_licencias_compradas" msprop:Generator_ColumnPropNameInTable="total_licencias_compradasColumn" msprop:Generator_UserColumnName="total_licencias_compradas" type="xs:string" minOccurs="0" />
+              <xs:element name="id_licencias_detalle" msprop:Generator_ColumnVarNameInTable="columnid_licencias_detalle" msprop:Generator_ColumnPropNameInRow="id_licencias_detalle" msprop:Generator_ColumnPropNameInTable="id_licencias_detalleColumn" msprop:Generator_UserColumnName="id_licencias_detalle" type="xs:int" minOccurs="0" />
+              <xs:element name="mac_adres_maquina" msprop:Generator_ColumnVarNameInTable="columnmac_adres_maquina" msprop:Generator_ColumnPropNameInRow="mac_adres_maquina" msprop:Generator_ColumnPropNameInTable="mac_adres_maquinaColumn" msprop:Generator_UserColumnName="mac_adres_maquina" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_sesion_maquina" msprop:Generator_ColumnVarNameInTable="columnnombre_sesion_maquina" msprop:Generator_ColumnPropNameInRow="nombre_sesion_maquina" msprop:Generator_ColumnPropNameInTable="nombre_sesion_maquinaColumn" msprop:Generator_UserColumnName="nombre_sesion_maquina" type="xs:string" minOccurs="0" />
+              <xs:element name="ip_maquina" msprop:Generator_ColumnVarNameInTable="columnip_maquina" msprop:Generator_ColumnPropNameInRow="ip_maquina" msprop:Generator_ColumnPropNameInTable="ip_maquinaColumn" msprop:Generator_UserColumnName="ip_maquina" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_licencias" msprop:Generator_ColumnVarNameInTable="columnnumero_licencias" msprop:Generator_ColumnPropNameInRow="numero_licencias" msprop:Generator_ColumnPropNameInTable="numero_licenciasColumn" msprop:Generator_UserColumnName="numero_licencias" type="xs:string" minOccurs="0" />
+              <xs:element name="creado" msprop:Generator_ColumnVarNameInTable="columncreado" msprop:Generator_ColumnPropNameInRow="creado" msprop:Generator_ColumnPropNameInTable="creadoColumn" msprop:Generator_UserColumnName="creado" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="modificado" msprop:Generator_ColumnVarNameInTable="columnmodificado" msprop:Generator_ColumnPropNameInRow="modificado" msprop:Generator_ColumnPropNameInTable="modificadoColumn" msprop:Generator_UserColumnName="modificado" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

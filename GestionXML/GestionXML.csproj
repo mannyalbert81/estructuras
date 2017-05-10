@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B43D85F-5017-4152-B40A-ACFFC24DAE6D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestionXML</RootNamespace>
+    <AssemblyName>GestionXML</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconoGestor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clases\Funciones.cs" />
+    <Compile Include="clases\ImportaCartones.cs" />
+    <Compile Include="clases\ProduccionCabeza.cs" />
+    <Compile Include="clases\ProduccionDetalle.cs" />
+    <Compile Include="clases\Variables.cs" />
+    <Compile Include="EditorXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorXML.Designer.cs">
+      <DependentUpon>EditorXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreadorXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreadorXML.Designer.cs">
+      <DependentUpon>CreadorXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtCaminos.cs">
+      <DependentUpon>dtCaminos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtCaminos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtCaminos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtCartonDocumentos.cs">
+      <DependentUpon>dtCartonDocumentos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtCartonDocumentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtCartonDocumentos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtEstado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtEstado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtIndice.cs">
+      <DependentUpon>dtIndice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtIndice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtIndice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtLicencias.cs">
+      <DependentUpon>dtLicencias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtLicencias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtLicencias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtProyectos.cs">
+      <DependentUpon>dtProyectos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtProyectos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtProyectos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtTipoIndice.cs">
+      <DependentUpon>dtTipoIndice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtTipoIndice.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtTipoIndice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\dtUsuarioEdita.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtUsuarioEdita.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\ProduccionXml.cs">
+      <DependentUpon>ProduccionXml.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datas\ProduccionXml.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProduccionXml.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignar.Designer.cs">
+      <DependentUpon>frmAsignar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCaminos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaminos.Designer.cs">
+      <DependentUpon>frmCaminos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarpetasCalidadXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarpetasCalidadXML.Designer.cs">
+      <DependentUpon>frmCarpetasCalidadXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarpetasCrea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarpetasCrea.Designer.cs">
+      <DependentUpon>frmCarpetasCrea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCartonDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCartonDocumentos.Designer.cs">
+      <DependentUpon>frmCartonDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControladores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControladores.Designer.cs">
+      <DependentUpon>frmControladores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstado.Designer.cs">
+      <DependentUpon>frmEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormularios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormularios.Designer.cs">
+      <DependentUpon>frmFormularios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndice.Designer.cs">
+      <DependentUpon>frmIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaPendienteTXT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaPendienteTXT.Designer.cs">
+      <DependentUpon>frmListaPendienteTXT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaPendienteXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaPendienteXML.Designer.cs">
+      <DependentUpon>frmListaPendienteXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenucs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenucs.Designer.cs">
+      <DependentUpon>frmMenucs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPortada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPortada.Designer.cs">
+      <DependentUpon>frmPortada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProyectos.Designer.cs">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoIndice.Designer.cs">
+      <DependentUpon>frmTipoIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPermisosRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPermisosRoles.Designer.cs">
+      <DependentUpon>frmPermisosRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstalarLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstalarLicencias.Designer.cs">
+      <DependentUpon>InstalarLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportes\contCartonDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contCartonDocumentos.Designer.cs">
+      <DependentUpon>contCartonDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contEstado.Designer.cs">
+      <DependentUpon>contEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contIndice.Designer.cs">
+      <DependentUpon>contIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contLicencias.Designer.cs">
+      <DependentUpon>contLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contProduccion.Designer.cs">
+      <DependentUpon>contProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contProyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contProyectos.Designer.cs">
+      <DependentUpon>contProyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contCaminos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contCaminos.Designer.cs">
+      <DependentUpon>contCaminos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contTipoIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contTipoIndice.Designer.cs">
+      <DependentUpon>contTipoIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\contUsuariosEdita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\contUsuariosEdita.Designer.cs">
+      <DependentUpon>contUsuariosEdita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rptProduccion21.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProduccion2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroCaminos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroCaminos.Designer.cs">
+      <DependentUpon>FiltroCaminos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\FiltroIndice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroIndice.Designer.cs">
+      <DependentUpon>FiltroIndice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\FiltroLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroLicencias.Designer.cs">
+      <DependentUpon>FiltroLicencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\FiltroUsuarioEdita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroUsuarioEdita.Designer.cs">
+      <DependentUpon>FiltroUsuarioEdita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\FiltroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\FiltroUsuarios.Designer.cs">
+      <DependentUpon>FiltroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rptCaminos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCaminos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptCartonDocuementos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartonDocuementos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptEstado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptIndice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptIndice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptLicencias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLicencias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptUsuarioEdita.cs">
+      <DependentUpon>rptUsuarioEdita.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\rptProduccion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProduccion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptProyectos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProyectos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rptTipoIndice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTipoIndice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="EditorXML.resx">
+      <DependentUpon>EditorXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreadorXML.resx">
+      <DependentUpon>CreadorXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignar.resx">
+      <DependentUpon>frmAsignar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaminos.resx">
+      <DependentUpon>frmCaminos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarpetasCalidadXML.resx">
+      <DependentUpon>frmCarpetasCalidadXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarpetasCrea.resx">
+      <DependentUpon>frmCarpetasCrea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCartonDocumentos.resx">
+      <DependentUpon>frmCartonDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControladores.resx">
+      <DependentUpon>frmControladores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstado.resx">
+      <DependentUpon>frmEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormularios.resx">
+      <DependentUpon>frmFormularios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIndice.resx">
+      <DependentUpon>frmIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaPendienteTXT.resx">
+      <DependentUpon>frmListaPendienteTXT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaPendienteXML.resx">
+      <DependentUpon>frmListaPendienteXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenucs.resx">
+      <DependentUpon>frmMenucs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPortada.resx">
+      <DependentUpon>frmPortada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProyectos.resx">
+      <DependentUpon>frmProyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoIndice.resx">
+      <DependentUpon>frmTipoIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPermisosRoles.resx">
+      <DependentUpon>frmPermisosRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstalarLicencias.resx">
+      <DependentUpon>InstalarLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reportes\contCartonDocumentos.resx">
+      <DependentUpon>contCartonDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contEstado.resx">
+      <DependentUpon>contEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contIndice.resx">
+      <DependentUpon>contIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contLicencias.resx">
+      <DependentUpon>contLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contProduccion.resx">
+      <DependentUpon>contProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contProyectos.resx">
+      <DependentUpon>contProyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contCaminos.resx">
+      <DependentUpon>contCaminos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contTipoIndice.resx">
+      <DependentUpon>contTipoIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\contUsuariosEdita.resx">
+      <DependentUpon>contUsuariosEdita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptProduccion2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProduccion21.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\FiltroCaminos.resx">
+      <DependentUpon>FiltroCaminos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\FiltroIndice.resx">
+      <DependentUpon>FiltroIndice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\FiltroLicencias.resx">
+      <DependentUpon>FiltroLicencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\FiltroUsuarioEdita.resx">
+      <DependentUpon>FiltroUsuarioEdita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\FiltroUsuarios.resx">
+      <DependentUpon>FiltroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptCaminos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCaminos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptCartonDocuementos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartonDocuementos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptEstado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptIndice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIndice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptLicencias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLicencias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptUsuarioEdita.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptUsuarioEdita.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptProduccion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProduccion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptProyectos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProyectos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rptTipoIndice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTipoIndice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="datas\dtCaminos.xsc">
+      <DependentUpon>dtCaminos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtCaminos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtCaminos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtCaminos.xss">
+      <DependentUpon>dtCaminos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtCartonDocumentos.xsc">
+      <DependentUpon>dtCartonDocumentos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtCartonDocumentos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtCartonDocumentos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtCartonDocumentos.xss">
+      <DependentUpon>dtCartonDocumentos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtEstado.xsc">
+      <DependentUpon>dtEstado.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtEstado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtEstado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtEstado.xss">
+      <DependentUpon>dtEstado.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtIndice.xsc">
+      <DependentUpon>dtIndice.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtIndice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtIndice.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtIndice.xss">
+      <DependentUpon>dtIndice.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtLicencias.xsc">
+      <DependentUpon>dtLicencias.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtLicencias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtLicencias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtLicencias.xss">
+      <DependentUpon>dtLicencias.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtProyectos.xsc">
+      <DependentUpon>dtProyectos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtProyectos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtProyectos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtProyectos.xss">
+      <DependentUpon>dtProyectos.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtTipoIndice.xsc">
+      <DependentUpon>dtTipoIndice.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtTipoIndice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTipoIndice.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtTipoIndice.xss">
+      <DependentUpon>dtTipoIndice.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtUsuarioEdita.xsc">
+      <DependentUpon>dtUsuarioEdita.xsd</DependentUpon>
+    </None>
+    <None Include="datas\dtUsuarioEdita.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtUsuarioEdita.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\dtUsuarioEdita.xss">
+      <DependentUpon>dtUsuarioEdita.xsd</DependentUpon>
+    </None>
+    <None Include="datas\ProduccionXml.xsc">
+      <DependentUpon>ProduccionXml.xsd</DependentUpon>
+    </None>
+    <None Include="datas\ProduccionXml.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProduccionXml.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datas\ProduccionXml.xss">
+      <DependentUpon>ProduccionXml.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{2fa5227c-44c7-41f7-b0e5-8afe32991bc8}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="caminos.txt" />
+    <Content Include="crea-xml.ico" />
+    <Content Include="iconoGestor.ico" />
+    <Content Include="indice.txt" />
+    <None Include="Resources\salir21.png" />
+    <None Include="Resources\salir2.png" />
+    <None Include="Resources\salir1.png" />
+    <None Include="Resources\salir.png" />
+    <None Include="Resources\portada21.jpg" />
+    <None Include="Resources\pasted image 970x391.jpg" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\vision.png" />
+    <None Include="Resources\clipboard.png.bmp" />
+    <None Include="Resources\1493865098_license_key.png" />
+    <None Include="Resources\firma-del-contrato1.png" />
+    <None Include="Resources\carpeta %284%291.png" />
+    <None Include="Resources\logoreport.jpg" />
+    <None Include="Resources\logo-sudamericano.jpg" />
+    <None Include="Resources\Reporte .jpg" />
+    <None Include="Resources\Reporte I1.JPEG" />
+    <None Include="Resources\Reporte I.JPEG" />
+    <None Include="Resources\Reportes_2014.jpg" />
+    <None Include="Resources\reportes5.png" />
+    <None Include="Resources\reportes4.png" />
+    <None Include="Resources\reportes3.png" />
+    <None Include="Resources\reportes2.png" />
+    <None Include="Resources\reportes1.png" />
+    <None Include="Resources\reportesU.png" />
+    <None Include="Resources\reportesG.png" />
+    <None Include="Resources\agregarCarpeta.png" />
+    <None Include="Resources\agregar.png" />
+    <None Include="Resources\Agregar Indice.png" />
+    <None Include="Resources\hojas.png" />
+    <None Include="Resources\Estado.png" />
+    <None Include="Resources\carton.png" />
+    <None Include="Resources\conexiones.png" />
+    <None Include="Resources\indice.png" />
+    <None Include="Resources\Proyectos.png" />
+    <None Include="Resources\mantenimiento.png" />
+    <None Include="Resources\formularios.png" />
+    <None Include="Resources\controlar.png" />
+    <None Include="Resources\palabras-clave.png" />
+    <None Include="Resources\acceso.png" />
+    <None Include="Resources\grupo.png" />
+    <None Include="Resources\contactos.png" />
+    <None Include="Resources\certificado.png" />
+    <None Include="Resources\nuevo-archivo.png" />
+    <None Include="Resources\xml.png" />
+    <None Include="Resources\salida.png" />
+    <None Include="Resources\carpeta.png" />
+    <None Include="Resources\login gestor copia2.jpg" />
+    <None Include="Resources\login gestor copia.jpg" />
+    <None Include="Resources\portada2.jpg" />
+    <None Include="Resources\portada.jpg" />
+    <None Include="Resources\primera.png" />
+    <None Include="Resources\atras.png" />
+    <None Include="Resources\portadamain1.jpg" />
+    <None Include="Resources\portadamain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
