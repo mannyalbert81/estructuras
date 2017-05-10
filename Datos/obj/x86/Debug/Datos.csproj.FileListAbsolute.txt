@@ -1,0 +1,13 @@
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\Datos.pdb
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\Mono.Security.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\Npgsql.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\Npgsql.xml
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\de\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\es\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\fi\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\fr\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\ja\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x86\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\obj\x86\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\obj\x86\Debug\Datos.pdb

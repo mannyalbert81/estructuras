@@ -1,0 +1,16 @@
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Negocio.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Negocio.pdb
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Mono.Security.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Npgsql.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Datos.pdb
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\Npgsql.xml
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\de\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\es\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\fi\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\fr\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\ja\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\bin\x64\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\obj\x64\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\obj\x64\Debug\Negocio.dll
+C:\Users\ManuelAlberto\Source\Repos\creaxml\Negocio\obj\x64\Debug\Negocio.pdb
