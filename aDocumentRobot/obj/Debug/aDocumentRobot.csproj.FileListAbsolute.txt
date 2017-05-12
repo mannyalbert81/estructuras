@@ -1,0 +1,109 @@
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\aDocumentRobot.exe
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\aDocumentRobot.pdb
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\itextsharp.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Mono.Security.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Negocio.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Npgsql.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Datos.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Negocio.pdb
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\itextsharp.xml
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Npgsql.xml
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\Datos.pdb
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\de\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\es\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\fi\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\fr\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\ja\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\obj\Debug\aDocumentRobot.csprojResolveAssemblyReference.cache
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\obj\Debug\aDocumentRobot.exe
+C:\proyectos\2015\consola\AdocRobot2.0\aDocumentRobot\obj\Debug\aDocumentRobot.pdb
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\obj\Debug\aDocumentRobot.exe
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\obj\Debug\aDocumentRobot.pdb
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\obj\Debug\aDocumentRobot.csprojResolveAssemblyReference.cache
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\obj\Debug\aDocumentRobot.PonNumeros.resources
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\obj\Debug\aDocumentRobot.csproj.GenerateResource.Cache
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\aDocumentRobot.exe
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\aDocumentRobot.pdb
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\itextsharp.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Mono.Security.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Negocio.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Npgsql.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Datos.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Negocio.pdb
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\itextsharp.xml
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Npgsql.xml
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\Datos.pdb
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\de\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\es\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\fi\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\fr\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\ja\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot3.0\aDocumentRobot\bin\Debug\zh-CN\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.exe
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.pdb
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\aDocumentRobot.exe
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\aDocumentRobot.pdb
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\itextsharp.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Mono.Security.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Negocio.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Npgsql.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Datos.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Negocio.pdb
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\itextsharp.xml
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Npgsql.xml
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\Datos.pdb
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\de\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\es\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\fi\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\fr\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\ja\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\bin\Debug\zh-CN\Npgsql.resources.dll
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.csprojResolveAssemblyReference.cache
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.PonNumeros.resources
+c:\proyectos\2016\consola\AdocRobot4.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.csproj.GenerateResource.Cache
+c:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.exe
+c:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.pdb
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\aDocumentRobot.exe
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\aDocumentRobot.pdb
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\itextsharp.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Mono.Security.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Negocio.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Npgsql.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Datos.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Negocio.pdb
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\itextsharp.xml
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Npgsql.xml
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\Datos.pdb
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\de\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\es\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\fi\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\fr\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\ja\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.csprojResolveAssemblyReference.cache
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.PonNumeros.resources
+C:\proyectos\2017\consola\AdocRobot5.0 Capreinsi\aDocumentRobot\obj\Debug\aDocumentRobot.csproj.GenerateResource.Cache
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\aDocumentRobot.exe.config
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\aDocumentRobot.exe
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\aDocumentRobot.pdb
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\itextsharp.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Mono.Security.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Negocio.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Npgsql.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Negocio.pdb
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\itextsharp.xml
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Npgsql.xml
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\Datos.pdb
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\de\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\es\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\obj\Debug\aDocumentRobot.csprojResolveAssemblyReference.cache
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\obj\Debug\aDocumentRobot.PonNumeros.resources
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\obj\Debug\aDocumentRobot.csproj.GenerateResource.Cache
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\obj\Debug\aDocumentRobot.exe
+C:\Users\ManuelAlberto\Source\Repos\estructuras\aDocumentRobot\obj\Debug\aDocumentRobot.pdb

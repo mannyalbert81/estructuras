@@ -11,3 +11,17 @@ C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x64\Debug\ja\Npgsql.resour
 C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\bin\x64\Debug\zh-CN\Npgsql.resources.dll
 C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\obj\x64\Debug\Datos.dll
 C:\Users\ManuelAlberto\Source\Repos\creaxml\Datos\obj\x64\Debug\Datos.pdb
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\Datos.pdb
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\Mono.Security.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\Npgsql.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\Npgsql.xml
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\de\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\es\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\fi\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\fr\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\ja\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\bin\x64\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\obj\x64\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\obj\x64\Debug\Datos.dll
+C:\Users\ManuelAlberto\Source\Repos\estructuras\Datos\obj\x64\Debug\Datos.pdb

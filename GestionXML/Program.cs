@@ -16,7 +16,7 @@ namespace GestionXML
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPortada());
+            Application.Run(new Estructuras());
         }
     }
 }
