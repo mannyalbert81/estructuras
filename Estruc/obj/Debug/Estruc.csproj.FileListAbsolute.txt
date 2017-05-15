@@ -2,3 +2,7 @@ C:\Users\ManuelAlberto\Source\Repos\estructuras\Estruc\bin\Debug\Estruc.exe
 C:\Users\ManuelAlberto\Source\Repos\estructuras\Estruc\bin\Debug\Estruc.pdb
 C:\Users\ManuelAlberto\Source\Repos\estructuras\Estruc\obj\Debug\Estruc.exe
 C:\Users\ManuelAlberto\Source\Repos\estructuras\Estruc\obj\Debug\Estruc.pdb
+C:\Users\mflores\Source\Repos\estructuras\Estruc\bin\Debug\Estruc.exe
+C:\Users\mflores\Source\Repos\estructuras\Estruc\bin\Debug\Estruc.pdb
+C:\Users\mflores\Source\Repos\estructuras\Estruc\obj\Debug\Estruc.exe
+C:\Users\mflores\Source\Repos\estructuras\Estruc\obj\Debug\Estruc.pdb
