@@ -148,7 +148,7 @@ namespace EstructuraConsole
                         }
                         else
                         {
-                            TimeSpan ts = _fecha_finalizacion - FechaActual  ;
+                            TimeSpan ts = _fecha_finalizacion - FechaActual;
                             _dias_por_vencer  = ts.Days;
                             _vencida = false;
 
@@ -166,9 +166,50 @@ namespace EstructuraConsole
 
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        double _provision_requerida_original_eres_04 = 0;
+                        double _cartera_castigada_eres_04 = 0;
+                        if (_calificacion_propia_eres_04 == "A1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                        }
+                        if (_calificacion_propia_eres_04 == "A2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                        }
+                        if (_calificacion_propia_eres_04 == "A3")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                        }
+                        if (_calificacion_propia_eres_04 == "B1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                        }
+                        if (_calificacion_propia_eres_04 == "B2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                        }
+                        if (_calificacion_propia_eres_04 == "C1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                        }
+                        if (_calificacion_propia_eres_04 == "C2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                        }
+                        if (_calificacion_propia_eres_04 == "D")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                        }
+                        if (_calificacion_propia_eres_04 == "E")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _cartera_castigada_eres_04 = _saldo_ubicar;
+                        }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
 
-                        
+                        DataTable dtIntereses = AccesoLogica.Select(" * ", "cabeza_eres_04", " numero_operacion LIKE '%%'   ");
+
+
                         //10
                         double _valor_vencer_1_a_30_eres_04  = 0;
                         double _valor_vencer_31_a_90_eres_04 = 0;
@@ -276,17 +317,15 @@ namespace EstructuraConsole
                             {
                                 _valor_vencer_mas_360_eres_04 = _saldo_ubicar;
                             }
-
                             
-
                         }
 
                         double _gastos_recuperacion_cartera_vencida_eres_04         = 0;
                         double _interes_ordinario_eres_04                           = 0;  ///calcular
                         double _interes_sobre_mora_eres_04                           = 0 ;
                         double _demanda_judicial_eres_04                            = 0;
-                        double _cartera_castigada_eres_04                           = 0;
-                        double _provision_requerida_original_eres_04                = _saldo_ubicar;
+                       
+                       // double _provision_requerida_original_eres_04                = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04                = 0;
                         double _provision_constituida_eres_04                       = _saldo_ubicar;
                         string _tipo_operacion_eres_04                              = _tipo_operacion;
@@ -308,7 +347,6 @@ namespace EstructuraConsole
                             if (_actualizar == 1)
                             {
                                 int resul = AccesoLogica.Update("eres_04", "vencida = 'true'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
-
                             }
 
                             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -354,7 +392,6 @@ namespace EstructuraConsole
 
                         if (FechaActual > _fecha_finalizacion)
                         {
-
                             TimeSpan ts = FechaActual - _fecha_finalizacion;
                             _dias_morosidad_eres_04 = ts.Days + "";
                             _vencida = true;
@@ -370,14 +407,53 @@ namespace EstructuraConsole
                         //5
                         string _metodologia_calificacion_eres_04 = "T";
                         //6
-                        string _calificacion_propia_eres_04 = "A1";
+                        string _calificacion_propia_eres_04 = _calificacion_propia;
                         //7
-                        string _calificacion_homologada_eres_04 = "A1";
+                        string _calificacion_homologada_eres_04 = _calificacion_homologada;
                         //8
                         double _tasa_interes_eres_04 = _porcentaje;
 
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        double _provision_requerida_original_eres_04 = 0;
+                        double _cartera_castigada_eres_04 = 0;
+                        if (_calificacion_propia_eres_04 == "A1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                        }
+                        if (_calificacion_propia_eres_04 == "A2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                        }
+                        if (_calificacion_propia_eres_04 == "A3")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                        }
+                        if (_calificacion_propia_eres_04 == "B1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                        }
+                        if (_calificacion_propia_eres_04 == "B2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                        }
+                        if (_calificacion_propia_eres_04 == "C1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                        }
+                        if (_calificacion_propia_eres_04 == "C2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                        }
+                        if (_calificacion_propia_eres_04 == "D")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                        }
+                        if (_calificacion_propia_eres_04 == "E")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _cartera_castigada_eres_04 = _saldo_ubicar;
+                        }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
                         
                         //10
@@ -392,8 +468,7 @@ namespace EstructuraConsole
                         double _valor_no_devenga_interes_91_a_180_eres_04 = 0;
                         double _valor_no_devenga_interes_181_a_360_eres_04 = 0;
                         double _valor_no_devenga_interes_mas_360_eres_04 = 0;
-
-
+                        
                         double _valor_vencido_1_a_30_eres_04 = 0;
                         double _valor_vencido_31_a_90_eres_04 = 0;
                         double _valor_vencido_91_a_180_eres_04 = 0;
@@ -405,8 +480,7 @@ namespace EstructuraConsole
                         double _valor_vencido_271_a_360_eres_04 = 0;
                         double _valor_vencido_361_a_720_eres_04 = 0;
                         double _valor_mas_720_eres_04 = 0;
-
-
+                        
                         if (_vencida == true)
                         {
                             int _dias = Convert.ToInt32(_dias_morosidad_eres_04);
@@ -479,16 +553,14 @@ namespace EstructuraConsole
                                 _valor_mas_720_eres_04 = _saldo_ubicar;
                             }
 
-
-
                         }
 
                         double _gastos_recuperacion_cartera_vencida_eres_04 = 0;
                         double _interes_ordinario_eres_04 = 0;  ///calcular
                         double _interes_sobre_mora_eres_04 = 0;
                         double _demanda_judicial_eres_04 = 0;
-                        double _cartera_castigada_eres_04 = 0;
-                        double _provision_requerida_original_eres_04 = _saldo_ubicar;
+                        
+                        //double _provision_requerida_original_eres_04 = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04 = 0;
                         double _provision_constituida_eres_04 = _saldo_ubicar;
                         string _tipo_operacion_eres_04 = _tipo_operacion;
@@ -516,7 +588,6 @@ namespace EstructuraConsole
                             Console.WriteLine("Cabeza #" + registros + "  Operacion: " + _numero_operacion + "  Identificacion: " + _identificacion_cliente + "  Saldo: " + _saldo_actual);
 
                             Console.WriteLine("-------------------------");
-
 
                         }
                         catch (Exception Ex)
@@ -630,7 +701,7 @@ namespace EstructuraConsole
             /// 
             string where = "   TRIM( estatus_operacion || numero_operacion ) = '" + numero_operacion + "' AND extract(MONTH  FROM fecha_pago_abono) = '" + Convert.ToInt16(_mes) + "'  AND extract(YEAR  FROM fecha_pago_abono) = '" + Convert.ToInt32(_year) + "'  ";
             string tabla = "abonos";
-            string columnas = " SUM(capital_pagado) AS capital_pagado  ";
+            string columnas = " SUM(capital_pagado) AS capital_pagado";
             DataTable dtAconos = AccesoLogica.Select(columnas, tabla, where);
 
             int reg3 = dtAconos.Rows.Count;
