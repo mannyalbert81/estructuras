@@ -164,8 +164,10 @@ namespace EstructuraConsole
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        
+                        
                         //10
-                        double _valor_vencer_1_a_30_eres_04               = 0;
+                        double _valor_vencer_1_a_30_eres_04  = 0;
                         double _valor_vencer_31_a_90_eres_04 = 0;
                         double _valor_vencer_91_a_180_eres_04 = 0;
                         double _valor_vencer_181_a_360_eres_04 = 0;
@@ -248,7 +250,7 @@ namespace EstructuraConsole
 
 
                         }
-                        else
+                        else        
                         {
                             int _dias = _dias_por_vencer;
                             if (_dias >= 1 && _dias <= 30)
