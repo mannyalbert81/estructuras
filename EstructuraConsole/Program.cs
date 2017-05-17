@@ -24,23 +24,8 @@ namespace EstructuraConsole
             Console.WriteLine("");
             Console.WriteLine("Conectando .....");
 
-            //elimino las operaciones de sobregirso de la cabeza
-
-            //LimpiarCabeza();
-
-
-            //BuscaOperaciones( _mes, _year);
-
-
-            //BuscarFechas();
-            //BuscarFechas2();
-
-
             InsertaEstructuras();
-            
-
             Console.Read();
-
 
         }
 
@@ -167,63 +152,67 @@ namespace EstructuraConsole
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
                         double _provision_requerida_original_eres_04 = 0;
+                        double _provision_constituida_eres_04 = 0;
                         double _cartera_castigada_eres_04 = 0;
                         if (_calificacion_propia_eres_04 == "A1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A3")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "D")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "E")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                             _cartera_castigada_eres_04 = _saldo_ubicar;
                         }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
-
-                        DataTable dtIntereses = AccesoLogica.Select(" * ", "cabeza_eres_04", " numero_operacion LIKE '%%'   ");
-
-
+                        
                         //10
                         double _valor_vencer_1_a_30_eres_04  = 0;
                         double _valor_vencer_31_a_90_eres_04 = 0;
                         double _valor_vencer_91_a_180_eres_04 = 0;
                         double _valor_vencer_181_a_360_eres_04 = 0;
                         double _valor_vencer_mas_360_eres_04 = 0;
-
                         double _valor_no_devenga_interes_1_a_30_eres_04 = 0;
                         double _valor_no_devenga_interes_31_a_90_eres_04 = 0;
                         double _valor_no_devenga_interes_91_a_180_eres_04 = 0;
                         double _valor_no_devenga_interes_181_a_360_eres_04 = 0;
                         double _valor_no_devenga_interes_mas_360_eres_04 = 0;
-
-
                         double _valor_vencido_1_a_30_eres_04 = 0;
                         double _valor_vencido_31_a_90_eres_04 = 0;
                         double _valor_vencido_91_a_180_eres_04 = 0;
@@ -289,10 +278,6 @@ namespace EstructuraConsole
                                 _valor_mas_720_eres_04 = _saldo_ubicar;
                             }
 
-
-
-
-
                         }
                         else
                         {
@@ -324,10 +309,7 @@ namespace EstructuraConsole
                         double _interes_ordinario_eres_04                           = 0;  ///calcular
                         double _interes_sobre_mora_eres_04                           = 0 ;
                         double _demanda_judicial_eres_04                            = 0;
-                       
-                       // double _provision_requerida_original_eres_04                = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04                = 0;
-                        double _provision_constituida_eres_04                       = _saldo_ubicar;
                         string _tipo_operacion_eres_04                              = _tipo_operacion;
                         string _objeto_fedeicomiso_eres_04                          =" " ;
                         double _prima_o_descuento_eres_04                           =0;
@@ -416,42 +398,52 @@ namespace EstructuraConsole
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
                         double _provision_requerida_original_eres_04 = 0;
+                        double _provision_constituida_eres_04 = 0;
                         double _cartera_castigada_eres_04 = 0;
                         if (_calificacion_propia_eres_04 == "A1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A3")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C1")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C2")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "D")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "E")
                         {
                             _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                             _cartera_castigada_eres_04 = _saldo_ubicar;
                         }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
@@ -462,13 +454,11 @@ namespace EstructuraConsole
                         double _valor_vencer_91_a_180_eres_04 = 0;
                         double _valor_vencer_181_a_360_eres_04 = 0;
                         double _valor_vencer_mas_360_eres_04 = 0;
-
                         double _valor_no_devenga_interes_1_a_30_eres_04 = 0;
                         double _valor_no_devenga_interes_31_a_90_eres_04 = 0;
                         double _valor_no_devenga_interes_91_a_180_eres_04 = 0;
                         double _valor_no_devenga_interes_181_a_360_eres_04 = 0;
                         double _valor_no_devenga_interes_mas_360_eres_04 = 0;
-                        
                         double _valor_vencido_1_a_30_eres_04 = 0;
                         double _valor_vencido_31_a_90_eres_04 = 0;
                         double _valor_vencido_91_a_180_eres_04 = 0;
@@ -559,10 +549,7 @@ namespace EstructuraConsole
                         double _interes_ordinario_eres_04 = 0;  ///calcular
                         double _interes_sobre_mora_eres_04 = 0;
                         double _demanda_judicial_eres_04 = 0;
-                        
-                        //double _provision_requerida_original_eres_04 = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04 = 0;
-                        double _provision_constituida_eres_04 = _saldo_ubicar;
                         string _tipo_operacion_eres_04 = _tipo_operacion;
                         string _objeto_fedeicomiso_eres_04 = " ";
                         double _prima_o_descuento_eres_04 = 0;
@@ -597,15 +584,7 @@ namespace EstructuraConsole
                             Console.WriteLine("??????????????????????????????????????");
                         }
 
-
                     }
-
-                    
-                    ///insertamo
-                    /// 
-
-
-
                     
                 }
             }
@@ -616,7 +595,6 @@ namespace EstructuraConsole
                 Console.ForegroundColor = ConsoleColor.White;
 
             }
-
             
         }
 
