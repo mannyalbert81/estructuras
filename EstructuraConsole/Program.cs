@@ -24,8 +24,8 @@ namespace EstructuraConsole
             Console.WriteLine("");
             Console.WriteLine("Conectando .....");
 
-            InsertaEstructuras04();
-            //InsertaEstructuras05();
+           // InsertaEstructuras04();
+            InsertaEstructuras05();
            
             Console.Read();
 
@@ -186,7 +186,6 @@ namespace EstructuraConsole
 
                             TimeSpan ts = FechaActual - _fecha_finalizacion;
                             _dias_morosidad_eres_04 = ts.Days + "";
-                            
                             _vencida = true;
 
                         }
@@ -430,7 +429,8 @@ namespace EstructuraConsole
                         {
                             
                             InsertaEre04(_tipo_identificacion_eres_04, _identificacion_sujeto_eres_04, _numero_operacion_eres_04, _dias_morosidad_eres_04, _metodologia_calificacion_eres_04, _calificacion_propia_eres_04, _calificacion_homologada_eres_04, _tasa_interes_eres_04, _valor_vencer_1_a_30_eres_04, _valor_vencer_31_a_90_eres_04, _valor_vencer_91_a_180_eres_04, _valor_vencer_181_a_360_eres_04, _valor_vencer_mas_360_eres_04, _valor_no_devenga_interes_1_a_30_eres_04, _valor_no_devenga_interes_31_a_90_eres_04, _valor_no_devenga_interes_91_a_180_eres_04, _valor_no_devenga_interes_181_a_360_eres_04, _valor_no_devenga_interes_mas_360_eres_04, _valor_vencido_1_a_30_eres_04, _valor_vencido_31_a_90_eres_04, _valor_vencido_91_a_180_eres_04, _valor_vencido_181_a_360_eres_04, _valor_mas_360_eres_04, _valor_vencido_181_a_270_eres_04, _valor_mas_270_eres_04, _valor_vencido_91_a_270_eres_04, _valor_vencido_271_a_360_eres_04, _valor_vencido_361_a_720_eres_04, _valor_mas_720_eres_04, _gastos_recuperacion_cartera_vencida_eres_04, _interes_ordinario_eres_04, _interes_sobre_mora_eres_04, _demanda_judicial_eres_04, _cartera_castigada_eres_04, _provision_requerida_original_eres_04, _provision_requerida_reducida_eres_04, _provision_constituida_eres_04, _tipo_operacion_eres_04, _objeto_fedeicomiso_eres_04, _prima_o_descuento_eres_04, _cuota_credito_eres_04);
-                       
+                            int resul1 = AccesoLogica.Update("eres_04", "saldo = '"+ _saldo_ubicar + "'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
+
                             if (Convert.ToInt32(_saldo_ubicar) == 0)
                             {
                                 int resul = AccesoLogica.Update("eres_04", "vencida = 'true'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
@@ -624,6 +624,41 @@ namespace EstructuraConsole
                             {
                                 _valor_vencido_181_a_360_eres_04 = _saldo_ubicar;
                             }
+                            
+                            if (_dias >= 360)
+                            {
+                                _valor_mas_360_eres_04 = _saldo_ubicar;
+                            }
+
+                            if (_dias >= 181 && _dias <= 270)
+                            {
+                                _valor_vencido_181_a_270_eres_04 = _saldo_ubicar;
+                            }
+
+                            if (_dias >= 271)
+                            {
+                                _valor_mas_270_eres_04 = _saldo_ubicar;
+                            }
+                            if (_dias >= 91 && _dias <= 270)
+                            {
+                                _valor_vencido_91_a_270_eres_04 = _saldo_ubicar;
+                            }
+                            if (_dias >= 271 && _dias <= 360)
+                            {
+                                _valor_vencido_271_a_360_eres_04 = _saldo_ubicar;
+                            }
+
+                            if (_dias >= 361 && _dias <= 720)
+                            {
+                                _valor_vencido_361_a_720_eres_04 = _saldo_ubicar;
+                            }
+                            if (_dias >= 720)
+                            {
+                                _valor_mas_720_eres_04 = _saldo_ubicar;
+                            }
+
+
+
                         }
                         else
                         {
@@ -672,32 +707,7 @@ namespace EstructuraConsole
                                 _valor_vencer_mas_360_eres_04 = _saldo_ubicar;
                             }
 
-                            if (_dias >= 181 && _dias <= 270)
-                            {
-                                _valor_vencido_181_a_270_eres_04 = _saldo_ubicar;
-                            }
-
-                            if (_dias >= 271)
-                            {
-                                _valor_mas_270_eres_04 = _saldo_ubicar;
-                            }
-                            if (_dias >= 91 && _dias <= 270)
-                            {
-                                _valor_vencido_91_a_270_eres_04 = _saldo_ubicar;
-                            }
-                            if (_dias >= 271 && _dias <= 360)
-                            {
-                                _valor_vencido_271_a_360_eres_04 = _saldo_ubicar;
-                            }
-
-                            if (_dias >= 361 && _dias <= 720)
-                            {
-                                _valor_vencido_361_a_720_eres_04 = _saldo_ubicar;
-                            }
-                            if (_dias >= 720)
-                            {
-                                _valor_mas_720_eres_04 = _saldo_ubicar;
-                            }
+                           
 
                         }
 
@@ -718,6 +728,8 @@ namespace EstructuraConsole
                         {
                            
                             InsertaEre04(_tipo_identificacion_eres_04, _identificacion_sujeto_eres_04, _numero_operacion_eres_04, _dias_morosidad_eres_04, _metodologia_calificacion_eres_04, _calificacion_propia_eres_04, _calificacion_homologada_eres_04, _tasa_interes_eres_04, _valor_vencer_1_a_30_eres_04, _valor_vencer_31_a_90_eres_04, _valor_vencer_91_a_180_eres_04, _valor_vencer_181_a_360_eres_04, _valor_vencer_mas_360_eres_04, _valor_no_devenga_interes_1_a_30_eres_04, _valor_no_devenga_interes_31_a_90_eres_04, _valor_no_devenga_interes_91_a_180_eres_04, _valor_no_devenga_interes_181_a_360_eres_04, _valor_no_devenga_interes_mas_360_eres_04, _valor_vencido_1_a_30_eres_04, _valor_vencido_31_a_90_eres_04, _valor_vencido_91_a_180_eres_04, _valor_vencido_181_a_360_eres_04, _valor_mas_360_eres_04, _valor_vencido_181_a_270_eres_04, _valor_mas_270_eres_04, _valor_vencido_91_a_270_eres_04, _valor_vencido_271_a_360_eres_04, _valor_vencido_361_a_720_eres_04, _valor_mas_720_eres_04, _gastos_recuperacion_cartera_vencida_eres_04, _interes_ordinario_eres_04, _interes_sobre_mora_eres_04, _demanda_judicial_eres_04, _cartera_castigada_eres_04, _provision_requerida_original_eres_04, _provision_requerida_reducida_eres_04, _provision_constituida_eres_04, _tipo_operacion_eres_04, _objeto_fedeicomiso_eres_04, _prima_o_descuento_eres_04, _cuota_credito_eres_04);
+                            int resul1 = AccesoLogica.Update("eres_04", "saldo = '" + _saldo_ubicar + "'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
+
                             if (Convert.ToInt32(_saldo_ubicar) == 0)
                             {
                                 int resul = AccesoLogica.Update("eres_04", "vencida = 'true'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
