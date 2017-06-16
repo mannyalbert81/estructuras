@@ -24,33 +24,716 @@ namespace EstructuraConsole
             Console.WriteLine("");
             Console.WriteLine("Conectando .....");
 
-            //elimino las operaciones de sobregirso de la cabeza
-
-            //LimpiarCabeza();
-
-
-            //BuscaOperaciones( _mes, _year);
-
-
-            //BuscarFechas();
-            //BuscarFechas2();
-
-
-            InsertaEstructuras();
-            
-
+            //InsertaEstructuras04();
+            //InsertaEstructuras05();
+            //verificar_cartera();
+            liventy();
             Console.Read();
-
 
         }
 
-        public static void InsertaEstructuras()
+
+        public static void liventy()
         {
-            Console.WriteLine("Cominezo a intsertar .....");
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+            string _identificacion = "";
+            int _id_tipo_identificacion = 0;
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "clientes", "id_clientes>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _identificacion = Convert.ToString(renglon["identificacion_clientes"].ToString());
+
+                    if (_identificacion.Length == 10)
+                    {
+                        _id_tipo_identificacion = 17;
+                    }
+                    if (_identificacion.Length == 13)
+                    {
+                        _id_tipo_identificacion = 18;
+                    }
+                    if (_identificacion.Length > 13)
+                    {
+                        _id_tipo_identificacion = 23;
+                    }
+
+                    try
+                    {
+                        int resul = AccesoLogica.Update("clientes", "id_tipo_identificacion = '" + _id_tipo_identificacion + "'", "identificacion_clientes= '" + _identificacion + "'");
+
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("-------------------------");
+
+                        Console.WriteLine("Registros #" + registros + "  Cedula: " + _identificacion);
+
+                        Console.WriteLine("-------------------------");
+
+
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("??????????????????????????????????????");
+                        Console.WriteLine("ERROR AL Actualizar: " + _identificacion + "        E->" + Ex.Message);
+                        Console.WriteLine("??????????????????????????????????????");
+                    }
+
+
+                }
+            }
+
+            /*
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+
+            int _id_titulo_credito = 0;
+            string _etapa_procesal = "";
+            string _nombre_estados_titulos_credito = "";
+            int _id_estados_titulos_credito = 0;
+
+            int _id_estados_titulos_credito1 = 0;
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "titulo_credito", "id_titulo_credito>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _etapa_procesal = Convert.ToString(renglon["etapa_procesal"].ToString());
+                    _id_titulo_credito = Convert.ToInt32(renglon["id_titulo_credito"].ToString());
+
+
+                    DataTable dtEstadosProcesales = AccesoLogica.Select(" * ", "estados_titulos_credito", "id_estados_titulos_credito>0");
+
+                    int regEstadosProcesales = dtEstadosProcesales.Rows.Count;
+
+                    if (regEstadosProcesales > 0)
+                    {
+                        foreach (DataRow renglon1 in dtEstadosProcesales.Rows)
+                        {
+
+
+                            _nombre_estados_titulos_credito = Convert.ToString(renglon1["nombre_estados_titulos_credito"].ToString());
+                            _id_estados_titulos_credito = Convert.ToInt32(renglon1["id_estados_titulos_credito"].ToString());
+
+
+
+                            if (_etapa_procesal == _nombre_estados_titulos_credito)
+                            {
+                                _id_estados_titulos_credito1 = _id_estados_titulos_credito;
+                            }
+                        }
+
+                        try
+                        {
+                            int resul = AccesoLogica.Update("titulo_credito", "id_estados_titulos_credito = '" + _id_estados_titulos_credito1 + "'", "id_titulo_credito= '" + _id_titulo_credito + "'");
+
+
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("-------------------------");
+
+                            Console.WriteLine("Registros #" + registros + "  Titulo de Credito: " + _id_titulo_credito);
+
+                            Console.WriteLine("-------------------------");
+
+
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("??????????????????????????????????????");
+                            Console.WriteLine("ERROR AL Actualizar: " + _id_titulo_credito + "        E->" + Ex.Message);
+                            Console.WriteLine("??????????????????????????????????????");
+                        }
+
+
+
+                    }
+
+
+                }
+            }
+            */
+        }
+
+
+
+
+
+
+
+        public static void tipo_credito()
+        {
+
+            Console.WriteLine("Cominezo a Contar .....");
+            int A = 0;
+            int C = 0;
+            int F = 0;
+            int I = 0;
+            int N = 0;
+            int P = 0;
+            int V = 0;
+            int registros=0;
+            string _s = "";
+
+            DataTable dtAbonos_Historicos = AccesoLogica.Select(" * ", "historial_prestamos_sudamericano", "id_historial_prestamos_sudamericano>0 ORDER BY id_historial_prestamos_sudamericano");
+
+            int regClientes = dtAbonos_Historicos.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtAbonos_Historicos.Rows)
+                {
+                    registros++;
+
+                    _s = Convert.ToString(renglon["s"].ToString());
+
+                    if (_s == "A")
+                    {
+                        A++;
+
+                    }
+                    if (_s == "C")
+                    {
+                        C++;
+
+                    }
+                    if (_s == "F")
+                    {
+                        F++;
+
+                    }
+                    if (_s == "I")
+                    {
+                        I++;
+
+                    }
+                    if (_s == "N")
+                    {
+                        N++;
+
+                    }
+                    if (_s == "P")
+                    {
+                        P++;
+
+                    }
+                    if (_s == "V")
+                    {
+                        V++;
+
+                    }
+
+                    try
+                    {
+                        Console.WriteLine("A=" + A + " C=" + C + " F=" + F + " I=" + I + " N=" + N + " P=" + P + " V=" + V + " TOTAL REGISTROS=" + registros);
+
+
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("-------------------------------------------------");
+                        Console.WriteLine("Error al actualizar Operacion ->" + " ->" + Ex.Message);
+                        Console.WriteLine("-------------------------------------------------");
+                    }
+
+                }
+
+               
+            }
+        }
+
+
+        public static void verificar_cartera()
+        {
+            
+            //ACTUALIZO los id de los estados procesales
+
+            Console.WriteLine("Cominezo a Insertar .....");
+
+            int registros = 0;
+
+            string cedula_abonos_historicos = "";
+            string cliente_abonos_historicos = "";
+            
+            string _operacion_cartera_verificada = "";
+            double _capital_prestado_cartera_verificada = 0;
+            
+
+            DataTable dtAbonos_Historicos = AccesoLogica.Select(" * ", "cartera_verificada", "id_cartera_verificada>0 ORDER BY id_cartera_verificada");
+
+            int regClientes = dtAbonos_Historicos.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtAbonos_Historicos.Rows)
+                {
+                    registros++;
+
+                    _operacion_cartera_verificada = Convert.ToString(renglon["operacion_cartera_verificada"].ToString());
+                    _capital_prestado_cartera_verificada = Convert.ToDouble(renglon["capital_prestado_cartera_verificada"].ToString());
+
+                    double _cuota = DevuelveSumaAbonos(_operacion_cartera_verificada);
+
+
+
+                    try
+                    {
+                        int resul = AccesoLogica.Update("cartera_verificada", "total_abonos_cartera_verificada = '" + _cuota + "'", "operacion_cartera_verificada= '" + _operacion_cartera_verificada + "'");
+                        Console.WriteLine("Actalizando ....." + _operacion_cartera_verificada + registros);
+
+                        if (_cuota >= _capital_prestado_cartera_verificada)
+                        {
+                            int resul1 = AccesoLogica.Update("cartera_verificada", "estado_cancelado_cartera_verificada = 'TRUE'", "operacion_cartera_verificada= '" + _operacion_cartera_verificada + "'");
+                            Console.WriteLine("Operacion Cancelada #" + _operacion_cartera_verificada + registros);
+
+
+                        }
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("-------------------------------------------------");
+                        Console.WriteLine("Error al actualizar Operacion ->" + _operacion_cartera_verificada + " ->" + Ex.Message);
+                        Console.WriteLine("-------------------------------------------------");
+                    }
+
+
+
+
+                }
+            }
+
+        }
+
+        public static double DevuelveSumaAbonos(string _operacion_cartera_verificada)
+        {
+            double _total_abonos = 0;
+            double _saldo_actual = 0;
+            string numero_operacion = "";
+            double _capital_pagado = 0;
+
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("-------------------------");
+
+            Console.WriteLine("-------------------------");
+
+
+
+            ///BUSCO LA FECHA
+            /// 
+            string tabla = "abonos_historicos";
+            string columnas = " SUM(capital_pagado_abonos_historicos) AS capital_pagado_abonos_historicos";
+            string where = " operacion_abonos_historicos = '" + _operacion_cartera_verificada +"'";
+        
+
+            DataTable dtAconos = AccesoLogica.Select(columnas, tabla, where);
+
+            int reg3 = dtAconos.Rows.Count;
+            if (reg3 > 0)
+            {
+                foreach (DataRow renglon3 in dtAconos.Rows)
+                {
+                    if (renglon3["capital_pagado_abonos_historicos"].ToString().Length > 0)
+                    {
+                        _capital_pagado = Convert.ToDouble(renglon3["capital_pagado_abonos_historicos"].ToString());
+                    }
+                }
+            }
+
+
+            _total_abonos = _capital_pagado;
+            return _total_abonos;
+
+        }
+
+
+        public static void UpdateClientes()
+        {
+            
+            /*
+            
+            //ACTUALIZO los id de los estados procesales
+
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+
+            string _id_titulo_credito = "";
+            string _etapa_procesal = "";
+            string _nombre_estados_titulos_credito = "";
+            int _id_estados_titulos_credito = 0;
+            string _id_ciudad ="681";
+            string _id_usuarios = "77";
+
+            int _id_estados_titulos_credito1 = 0;
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "titulo_credito", "id_titulo_credito>0 ORDER BY id_titulo_credito");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                   
+                    _id_titulo_credito = Convert.ToString(renglon["id_titulo_credito"].ToString());
+
+
+
+                    string cadena1 = _id_titulo_credito + "?" + _id_ciudad  + "?" + _id_usuarios;
+
+                    string cadena2 = "_id_titulo_credito?_id_ciudad?_id_usuarios";
+
+                    string cadena3 = "NpgsqlDbType.Integer?NpgsqlDbType.Integer?NpgsqlDbType.Integer";
+
+                    try
+                    {
+                        int resultado = AccesoLogica.Insert(cadena1, cadena2, cadena3, "ins_asignacion_titulo_credito");
+                        Console.WriteLine("Insertado ....." + _etapa_procesal);
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("-------------------------------------------------");
+                        Console.WriteLine("Error al insertar Operacion ->" + _etapa_procesal + " ->" + Ex.Message);
+                        Console.WriteLine("-------------------------------------------------");
+                    }
+
+
+
+
+                }
+            }
+
+            /*
+
+            /*
+            //ACTUALIZO los id de los estados procesales
+
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+
+            int  _id_titulo_credito = 0;
+            string _etapa_procesal = "";
+            string _nombre_estados_titulos_credito = "";
+            int _id_estados_titulos_credito = 0;
+
+            int _id_estados_titulos_credito1 = 0;
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "titulo_credito", "id_titulo_credito>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _etapa_procesal = Convert.ToString(renglon["etapa_procesal"].ToString());
+                    _id_titulo_credito = Convert.ToInt32(renglon["id_titulo_credito"].ToString());
+
+
+                    DataTable dtEstadosProcesales = AccesoLogica.Select(" * ", "estados_titulos_credito", "id_estados_titulos_credito>0");
+
+                    int regEstadosProcesales = dtEstadosProcesales.Rows.Count;
+
+                    if (regEstadosProcesales > 0)
+                    {
+                        foreach (DataRow renglon1 in dtEstadosProcesales.Rows)
+                        {
+
+
+                            _nombre_estados_titulos_credito = Convert.ToString(renglon1["nombre_estados_titulos_credito"].ToString());
+                            _id_estados_titulos_credito = Convert.ToInt32(renglon1["id_estados_titulos_credito"].ToString());
+
+
+
+                            if (_etapa_procesal== _nombre_estados_titulos_credito) {
+                                _id_estados_titulos_credito1 = _id_estados_titulos_credito;
+                            }
+                        }
+
+                        try
+                        {
+                            int resul = AccesoLogica.Update("titulo_credito", "id_estados_titulos_credito = '" + _id_estados_titulos_credito1 + "'", "id_titulo_credito= '" + _id_titulo_credito + "'");
+
+
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine("-------------------------");
+
+                            Console.WriteLine("Registros #" + registros + "  Titulo de Credito: " + _id_titulo_credito);
+
+                            Console.WriteLine("-------------------------");
+
+
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("??????????????????????????????????????");
+                            Console.WriteLine("ERROR AL Actualizar: " + _id_titulo_credito + "        E->" + Ex.Message);
+                            Console.WriteLine("??????????????????????????????????????");
+                        }
+
+
+
+                    }
+
+
+
+
+
+                }
+            }
+            */
+            /*
+            
+           //INSERTO LOS ESTADOS PROCESALES
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+
+            string _etapa_procesal = "";
+           
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "titulo_credito", "id_titulo_credito>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _etapa_procesal = Convert.ToString(renglon["etapa_procesal"].ToString());
+
+
+
+                    string cadena1 = _etapa_procesal;
+
+                    string cadena2 = "_etapa_procesal";
+
+                    string cadena3 = "NpgsqlDbType.Varchar";
+
+                    try
+                    {
+                        int resultado = AccesoLogica.Insert(cadena1, cadena2, cadena3, "ins_estados_auto_pago_juicios");
+                        Console.WriteLine("Insertado ....." + _etapa_procesal);
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("-------------------------------------------------");
+                        Console.WriteLine("Error al insertar Operacion ->" + _etapa_procesal + " ->" + Ex.Message);
+                        Console.WriteLine("-------------------------------------------------");
+                    }
+
+
+                }
+            }
+
+            */
+
+
+
+            //ACTUALIZO NUMERO DE TITULO DE CREDITO
+
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+
+            string _id_titulo_credito = "";
+            string _numero_titulo_credito = "";
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "titulo_credito", "id_titulo_credito>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _id_titulo_credito = Convert.ToString(renglon["id_titulo_credito"].ToString());
+
+                    if (Convert.ToInt32(_id_titulo_credito) > 0 && Convert.ToInt32(_id_titulo_credito) <=1091)
+                    {
+                        _numero_titulo_credito = "2014"; 
+                    }
+                    if (Convert.ToInt32(_id_titulo_credito) > 1091 && Convert.ToInt32(_id_titulo_credito) <= 1213)
+                    {
+                        _numero_titulo_credito = "2016";
+                    }
+                    if (Convert.ToInt32(_id_titulo_credito) > 1213 && Convert.ToInt32(_id_titulo_credito) <= 1218)
+                    {
+                        _numero_titulo_credito = "2017";
+                    }
+
+                    try
+                    {
+                        int resul = AccesoLogica.Update("juicios", "year_juicios = '" + _numero_titulo_credito + "'", "id_titulo_credito= '" + _id_titulo_credito + "'");
+
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("-------------------------");
+
+                        Console.WriteLine("Registros #" + registros + "  Titulo de Credito: " + _id_titulo_credito);
+
+                        Console.WriteLine("-------------------------");
+
+
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("??????????????????????????????????????");
+                        Console.WriteLine("ERROR AL Actualizar: " + _id_titulo_credito + "        E->" + Ex.Message);
+                        Console.WriteLine("??????????????????????????????????????");
+                    }
+
+
+                }
+            }
+
+            
+
+
+
+
+            /*
+
+          // ACTUALIZO EL TIPO IDENTIFICACION
+
+            Console.WriteLine("Cominezo a actualizar .....");
+
+            int registros = 0;
+            string _identificacion = "";
+            int _id_tipo_identificacion = 0;
+
+            DataTable dtClientes = AccesoLogica.Select(" * ", "clientes", "id_clientes>0");
+
+            int regClientes = dtClientes.Rows.Count;
+
+            if (regClientes > 0)
+            {
+                foreach (DataRow renglon in dtClientes.Rows)
+                {
+                    registros++;
+                    _identificacion = Convert.ToString(renglon["identificacion_clientes"].ToString());
+
+                    if (_identificacion.Length == 10)
+                    {
+                        _id_tipo_identificacion = 17;
+                    }
+                    if (_identificacion.Length == 13)
+                    {
+                        _id_tipo_identificacion = 18;
+                    }
+                    if (_identificacion.Length > 13)
+                    {
+                        _id_tipo_identificacion = 23;
+                    }
+
+                    try
+                    {
+                        int resul = AccesoLogica.Update("clientes", "id_tipo_identificacion = '"+ _id_tipo_identificacion + "'", "identificacion_clientes= '" + _identificacion + "'");
+
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("-------------------------");
+
+                        Console.WriteLine("Registros #" + registros + "  Cedula: " + _identificacion);
+
+                        Console.WriteLine("-------------------------");
+
+
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("??????????????????????????????????????");
+                        Console.WriteLine("ERROR AL Actualizar: " + _identificacion + "        E->" + Ex.Message);
+                        Console.WriteLine("??????????????????????????????????????");
+                    }
+
+
+                }
+            }
+            */
+        }
+
+        public static void InsertaEstructuras05()
+        {
+            Console.WriteLine("Cominezo a insertar .....");
+
+            int registros = 0;
+            string _tipo_identificacion_eres_04 = "";
+            string _identificacion_sujeto_eres_04 = "";
+            string _numero_operacion_eres_04 = "";
+            string _tipo_transaccion = "C";
+            DateTime _fecha_cancelacion = Convert.ToDateTime("31/08/2014");
+            string _forma_cancelacion = "N";
+            string _calificacion = "";
+
+            DataTable dtEre04 = AccesoLogica.Select(" * ", "eres_04", "vencida='TRUE'");
+
+            int regEre04 = dtEre04.Rows.Count;
+
+            if (regEre04 > 0)
+            {
+                foreach (DataRow renglon in dtEre04.Rows)
+                {
+                    registros++;
+                    _tipo_identificacion_eres_04 = Convert.ToString(renglon["tipo_identificacion_eres_04"].ToString());
+                    _identificacion_sujeto_eres_04 = Convert.ToString(renglon["identificacion_sujeto_eres_04"].ToString());
+                    _numero_operacion_eres_04 = Convert.ToString(renglon["numero_operacion_eres_04"].ToString());
+
+
+                    try
+                    {
+
+                        InsertaEre05(_tipo_identificacion_eres_04, _identificacion_sujeto_eres_04, _numero_operacion_eres_04, _tipo_transaccion, _fecha_cancelacion, _forma_cancelacion, _calificacion);
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("-------------------------");
+
+                        Console.WriteLine("Registros #" + registros + "  Operacion: " + _numero_operacion_eres_04 + "  Identificacion: " + _identificacion_sujeto_eres_04);
+
+                        Console.WriteLine("-------------------------");
+
+
+                    }
+                    catch (Exception Ex)
+                    {
+                        Console.WriteLine("??????????????????????????????????????");
+                        Console.WriteLine("ERROR AL INSERTAR ESTRCTURA 05: " + _numero_operacion_eres_04 + "        E->" + Ex.Message);
+                        Console.WriteLine("??????????????????????????????????????");
+                    }
+
+
+                }
+            }
+            
+           }
+
+
+        public static void InsertaEstructuras04()
+        {
+            Console.WriteLine("Cominezo a insertar .....");
 
             //cabeza
             bool _vencida = false;
-
+            int _actualizar = 0;
+            DateTime FechaActual;
             string  _numero_operacion;
             DateTime  _fecha_inicio;
             DateTime  _fecha_finalizacion;
@@ -135,23 +818,25 @@ namespace EstructuraConsole
                         int daysInMes = System.DateTime.DaysInMonth(2014, 8);
                         //int daysInMes = System.DateTime.DaysInMonth(2014, 8);
                         string strActual = daysInMes +"/"+ _mes +"/"+ _year;   //    "01/08/2008";
-                        DateTime FechaActual = Convert.ToDateTime(strActual);
+                        FechaActual = Convert.ToDateTime(strActual);
 
                         if (FechaActual > _fecha_finalizacion)
                         {
 
                             TimeSpan ts = FechaActual - _fecha_finalizacion;
                             _dias_morosidad_eres_04 = ts.Days + "";
+                            
                             _vencida = true;
+
                         }
                         else
                         {
-                            TimeSpan ts = _fecha_finalizacion - FechaActual  ;
+                            TimeSpan ts = _fecha_finalizacion - FechaActual;
                             _dias_por_vencer  = ts.Days;
                             _vencida = false;
+
                         }
-
-
+                        
                         //5
                         string _metodologia_calificacion_eres_04 = "T";
                         //6
@@ -163,8 +848,56 @@ namespace EstructuraConsole
 
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        double _provision_requerida_original_eres_04 = 0;
+                        double _provision_constituida_eres_04 = 0;
+                        double _cartera_castigada_eres_04 = 0;
+                        if (_calificacion_propia_eres_04 == "A1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "A2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "A3")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "B1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "B2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "C1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "C2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "D")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "E")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                            _cartera_castigada_eres_04 = _saldo_ubicar;
+                        }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
-                        
                         
                         //10
                         double _valor_vencer_1_a_30_eres_04  = 0;
@@ -172,14 +905,11 @@ namespace EstructuraConsole
                         double _valor_vencer_91_a_180_eres_04 = 0;
                         double _valor_vencer_181_a_360_eres_04 = 0;
                         double _valor_vencer_mas_360_eres_04 = 0;
-
                         double _valor_no_devenga_interes_1_a_30_eres_04 = 0;
                         double _valor_no_devenga_interes_31_a_90_eres_04 = 0;
                         double _valor_no_devenga_interes_91_a_180_eres_04 = 0;
                         double _valor_no_devenga_interes_181_a_360_eres_04 = 0;
                         double _valor_no_devenga_interes_mas_360_eres_04 = 0;
-
-
                         double _valor_vencido_1_a_30_eres_04 = 0;
                         double _valor_vencido_31_a_90_eres_04 = 0;
                         double _valor_vencido_91_a_180_eres_04 = 0;
@@ -191,12 +921,40 @@ namespace EstructuraConsole
                         double _valor_vencido_271_a_360_eres_04 = 0;
                         double _valor_vencido_361_a_720_eres_04 = 0;
                         double _valor_mas_720_eres_04 = 0;
+                        double _interes_sobre_mora_eres_04 = 0;
+                        double _interes_ordinario_eres_04 = 0;  ///calcular
 
+                        
 
-                        if (_vencida)
+                        if (_vencida == true)
                         {
-                            int _dias = Convert.ToInt32(_dias_morosidad_eres_04);
-                            if (_dias >= 1 && _dias <= 30)
+                            // INTERES SOBRE MORA
+                            int _dias_morosidad = Convert.ToInt32(_dias_morosidad_eres_04) - 5;
+                            if (_dias_morosidad == 0)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0;
+                            }
+                            if (_dias_morosidad >= 1 && _dias_morosidad <= 15)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.00035;
+                            }
+                            if (_dias_morosidad >= 16 && _dias_morosidad <= 30)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003566666;
+                            }
+                            if (_dias_morosidad >= 31 && _dias_morosidad <= 60)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003633333;
+                            }
+                            if (_dias_morosidad > 60)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003666666;
+                            }
+
+                            // UBICAR MADURACION
+
+                            int _dias = Convert.ToInt32(_dias_morosidad_eres_04)-5;
+                            if (_dias >= 0 && _dias <= 30)
                             {
                                 _valor_vencido_1_a_30_eres_04 = _saldo_ubicar;
                             }
@@ -245,15 +1003,35 @@ namespace EstructuraConsole
                                 _valor_mas_720_eres_04 = _saldo_ubicar;
                             }
 
-
-
-
-
                         }
-                        else        
+                        else
                         {
+                            // INTERES ORDINARIO
+                            int _dias_vencer = _dias_por_vencer;
+                            if (_dias_vencer == 0)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0;
+                            }
+                            if (_dias_vencer >= 1 && _dias_vencer <= 15)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0105;
+                            }
+                            if (_dias_vencer >= 16 && _dias_vencer <= 30)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0107;
+                            }
+                            if (_dias_vencer >= 31 && _dias_vencer <= 60)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0109;
+                            }
+                            if (_dias_vencer > 60)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.011;
+                            }
+
+                            //UBICAR MADURACION
                             int _dias = _dias_por_vencer;
-                            if (_dias >= 1 && _dias <= 30)
+                            if (_dias >= 0 && _dias <= 30)
                             {
                                 _valor_vencer_1_a_30_eres_04 = _saldo_ubicar;
                             }
@@ -273,30 +1051,30 @@ namespace EstructuraConsole
                             {
                                 _valor_vencer_mas_360_eres_04 = _saldo_ubicar;
                             }
-
                             
-
                         }
 
                         double _gastos_recuperacion_cartera_vencida_eres_04         = 0;
-                        double _interes_ordinario_eres_04                           = 0;  ///calcular
-                        double _interes_sobre_mora_eres_04                           = 0 ;
                         double _demanda_judicial_eres_04                            = 0;
-                        double _cartera_castigada_eres_04                           = 0;
-                        double _provision_requerida_original_eres_04                = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04                = 0;
-                        double _provision_constituida_eres_04                       = _saldo_ubicar;
                         string _tipo_operacion_eres_04                              = _tipo_operacion;
                         string _objeto_fedeicomiso_eres_04                          =" " ;
                         double _prima_o_descuento_eres_04                           =0;
                         double _cuota_credito_eres_04                               = _cuota ;
 
-
+                        
 
                         ///inserto 
                         try
                         {
+                            
                             InsertaEre04(_tipo_identificacion_eres_04, _identificacion_sujeto_eres_04, _numero_operacion_eres_04, _dias_morosidad_eres_04, _metodologia_calificacion_eres_04, _calificacion_propia_eres_04, _calificacion_homologada_eres_04, _tasa_interes_eres_04, _valor_vencer_1_a_30_eres_04, _valor_vencer_31_a_90_eres_04, _valor_vencer_91_a_180_eres_04, _valor_vencer_181_a_360_eres_04, _valor_vencer_mas_360_eres_04, _valor_no_devenga_interes_1_a_30_eres_04, _valor_no_devenga_interes_31_a_90_eres_04, _valor_no_devenga_interes_91_a_180_eres_04, _valor_no_devenga_interes_181_a_360_eres_04, _valor_no_devenga_interes_mas_360_eres_04, _valor_vencido_1_a_30_eres_04, _valor_vencido_31_a_90_eres_04, _valor_vencido_91_a_180_eres_04, _valor_vencido_181_a_360_eres_04, _valor_mas_360_eres_04, _valor_vencido_181_a_270_eres_04, _valor_mas_270_eres_04, _valor_vencido_91_a_270_eres_04, _valor_vencido_271_a_360_eres_04, _valor_vencido_361_a_720_eres_04, _valor_mas_720_eres_04, _gastos_recuperacion_cartera_vencida_eres_04, _interes_ordinario_eres_04, _interes_sobre_mora_eres_04, _demanda_judicial_eres_04, _cartera_castigada_eres_04, _provision_requerida_original_eres_04, _provision_requerida_reducida_eres_04, _provision_constituida_eres_04, _tipo_operacion_eres_04, _objeto_fedeicomiso_eres_04, _prima_o_descuento_eres_04, _cuota_credito_eres_04);
+                       
+                            if (Convert.ToInt32(_saldo_ubicar) == 0)
+                            {
+                                int resul = AccesoLogica.Update("eres_04", "vencida = 'true'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
+                            }
+
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine("-------------------------");
 
@@ -312,9 +1090,7 @@ namespace EstructuraConsole
                             Console.WriteLine("ERROR AL INSERTAR ESTRCTURA: " + _numero_operacion_eres_04 + "        E->"+Ex.Message);
                             Console.WriteLine("??????????????????????????????????????");
                         }
-                        
-
-
+                       
                     }
 
                     if (_tipo == "S")
@@ -338,11 +1114,10 @@ namespace EstructuraConsole
 
                         int daysInMes = System.DateTime.DaysInMonth(Convert.ToInt16(_year), Convert.ToInt16(_mes));
                         string strActual = daysInMes +"/"+ _mes +"/"+ _year;   //    "01/08/2008";
-                        DateTime FechaActual = Convert.ToDateTime(strActual);
+                         FechaActual = Convert.ToDateTime(strActual);
 
                         if (FechaActual > _fecha_finalizacion)
                         {
-
                             TimeSpan ts = FechaActual - _fecha_finalizacion;
                             _dias_morosidad_eres_04 = ts.Days + "";
                             _vencida = true;
@@ -351,35 +1126,82 @@ namespace EstructuraConsole
                         {
                             TimeSpan ts = _fecha_finalizacion - FechaActual;
                             _dias_por_vencer = ts.Days;
+                            _vencida = false;
                         }
 
 
                         //5
                         string _metodologia_calificacion_eres_04 = "T";
                         //6
-                        string _calificacion_propia_eres_04 = "A1";
+                        string _calificacion_propia_eres_04 = _calificacion_propia;
                         //7
-                        string _calificacion_homologada_eres_04 = "A1";
+                        string _calificacion_homologada_eres_04 = _calificacion_homologada;
                         //8
                         double _tasa_interes_eres_04 = _porcentaje;
-
                         //9
                         double _saldo_ubicar = DevuelveSaldoActual(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        double _provision_requerida_original_eres_04 = 0;
+                        double _provision_constituida_eres_04 = 0;
+                        double _cartera_castigada_eres_04 = 0;
+                        if (_calificacion_propia_eres_04 == "A1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "A2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "A3")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "B1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "B2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "C1")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "C2")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "D")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                        }
+                        if (_calificacion_propia_eres_04 == "E")
+                        {
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
+                            _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
+                            _cartera_castigada_eres_04 = _saldo_ubicar;
+                        }
                         double _cuota = DevuelveAbonos(_tipo, _numero_operacion, _saldo_actual, _year, _mes);
+                        
                         //10
                         double _valor_vencer_1_a_30_eres_04 = 0;
                         double _valor_vencer_31_a_90_eres_04 = 0;
                         double _valor_vencer_91_a_180_eres_04 = 0;
                         double _valor_vencer_181_a_360_eres_04 = 0;
                         double _valor_vencer_mas_360_eres_04 = 0;
-
                         double _valor_no_devenga_interes_1_a_30_eres_04 = 0;
                         double _valor_no_devenga_interes_31_a_90_eres_04 = 0;
                         double _valor_no_devenga_interes_91_a_180_eres_04 = 0;
                         double _valor_no_devenga_interes_181_a_360_eres_04 = 0;
                         double _valor_no_devenga_interes_mas_360_eres_04 = 0;
-
-
                         double _valor_vencido_1_a_30_eres_04 = 0;
                         double _valor_vencido_31_a_90_eres_04 = 0;
                         double _valor_vencido_91_a_180_eres_04 = 0;
@@ -392,11 +1214,40 @@ namespace EstructuraConsole
                         double _valor_vencido_361_a_720_eres_04 = 0;
                         double _valor_mas_720_eres_04 = 0;
 
+                        double _interes_sobre_mora_eres_04 = 0;
+                        double _interes_ordinario_eres_04 = 0;
 
-                        if (_vencida)
+
+                        if (_vencida == true)
                         {
-                            int _dias = Convert.ToInt32(_dias_morosidad_eres_04);
-                            if (_dias >= 1 && _dias <= 30)
+                            // INTERES SOBRE MORA
+
+                            int _dias_morosidad = Convert.ToInt32(_dias_morosidad_eres_04)-5;
+                            if (_dias_morosidad == 0)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0;
+                            }
+                            if (_dias_morosidad >= 1 && _dias_morosidad <= 15)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.00035;
+                            }
+                            if (_dias_morosidad >= 16 && _dias_morosidad <= 30)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003566666;
+                            }
+                            if (_dias_morosidad >= 31 && _dias_morosidad <= 60)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003633333;
+                            }
+                            if (_dias_morosidad > 60)
+                            {
+                                _interes_sobre_mora_eres_04 = _dias_morosidad * 0.0003666666;
+                            }
+
+                            // UBICAR MADURACION
+
+                            int _dias = Convert.ToInt32(_dias_morosidad_eres_04)-5;
+                            if (_dias >= 0 && _dias <= 30)
                             {
                                 _valor_vencido_1_a_30_eres_04 = _saldo_ubicar;
                             }
@@ -412,12 +1263,34 @@ namespace EstructuraConsole
                             {
                                 _valor_vencido_181_a_360_eres_04 = _saldo_ubicar;
                             }
-
                         }
                         else
                         {
+                            // INTERES ORDINARIO
+                            int _dias_vencer = _dias_por_vencer;
+                            if (_dias_vencer == 0)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0;
+                            }
+                            if (_dias_vencer >= 1 && _dias_vencer <= 15)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0105;
+                            }
+                            if (_dias_vencer >= 16 && _dias_vencer <= 30)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0107;
+                            }
+                            if (_dias_vencer >= 31 && _dias_vencer <= 60)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.0109;
+                            }
+                            if (_dias_vencer > 60)
+                            {
+                                _interes_ordinario_eres_04 = _saldo_ubicar * 0.011;
+                            }
+                            //ubicar maduraccion
                             int _dias = _dias_por_vencer;
-                            if (_dias >= 1 && _dias <= 30)
+                            if (_dias >= 0 && _dias <= 30)
                             {
                                 _valor_vencer_1_a_30_eres_04 = _saldo_ubicar;
                             }
@@ -465,37 +1338,35 @@ namespace EstructuraConsole
                                 _valor_mas_720_eres_04 = _saldo_ubicar;
                             }
 
-
-
                         }
 
                         double _gastos_recuperacion_cartera_vencida_eres_04 = 0;
-                        double _interes_ordinario_eres_04 = 0;  ///calcular
-                        double _interes_sobre_mora_eres_04 = 0;
+                        ///calcular
+                     
                         double _demanda_judicial_eres_04 = 0;
-                        double _cartera_castigada_eres_04 = 0;
-                        double _provision_requerida_original_eres_04 = _saldo_ubicar;
                         double _provision_requerida_reducida_eres_04 = 0;
-                        double _provision_constituida_eres_04 = _saldo_ubicar;
                         string _tipo_operacion_eres_04 = _tipo_operacion;
                         string _objeto_fedeicomiso_eres_04 = " ";
                         double _prima_o_descuento_eres_04 = 0;
                         double _cuota_credito_eres_04 = _cuota;
 
-
+                        
 
                         ///inserto 
                         try
                         {
+                           
                             InsertaEre04(_tipo_identificacion_eres_04, _identificacion_sujeto_eres_04, _numero_operacion_eres_04, _dias_morosidad_eres_04, _metodologia_calificacion_eres_04, _calificacion_propia_eres_04, _calificacion_homologada_eres_04, _tasa_interes_eres_04, _valor_vencer_1_a_30_eres_04, _valor_vencer_31_a_90_eres_04, _valor_vencer_91_a_180_eres_04, _valor_vencer_181_a_360_eres_04, _valor_vencer_mas_360_eres_04, _valor_no_devenga_interes_1_a_30_eres_04, _valor_no_devenga_interes_31_a_90_eres_04, _valor_no_devenga_interes_91_a_180_eres_04, _valor_no_devenga_interes_181_a_360_eres_04, _valor_no_devenga_interes_mas_360_eres_04, _valor_vencido_1_a_30_eres_04, _valor_vencido_31_a_90_eres_04, _valor_vencido_91_a_180_eres_04, _valor_vencido_181_a_360_eres_04, _valor_mas_360_eres_04, _valor_vencido_181_a_270_eres_04, _valor_mas_270_eres_04, _valor_vencido_91_a_270_eres_04, _valor_vencido_271_a_360_eres_04, _valor_vencido_361_a_720_eres_04, _valor_mas_720_eres_04, _gastos_recuperacion_cartera_vencida_eres_04, _interes_ordinario_eres_04, _interes_sobre_mora_eres_04, _demanda_judicial_eres_04, _cartera_castigada_eres_04, _provision_requerida_original_eres_04, _provision_requerida_reducida_eres_04, _provision_constituida_eres_04, _tipo_operacion_eres_04, _objeto_fedeicomiso_eres_04, _prima_o_descuento_eres_04, _cuota_credito_eres_04);
-
+                            if (Convert.ToInt32(_saldo_ubicar) == 0)
+                            {
+                                int resul = AccesoLogica.Update("eres_04", "vencida = 'true'", "eres_04.numero_operacion_eres_04= '" + _numero_operacion_eres_04 + "'");
+                            }
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine("-------------------------");
 
                             Console.WriteLine("Cabeza #" + registros + "  Operacion: " + _numero_operacion + "  Identificacion: " + _identificacion_cliente + "  Saldo: " + _saldo_actual);
 
                             Console.WriteLine("-------------------------");
-
 
                         }
                         catch (Exception Ex)
@@ -505,15 +1376,7 @@ namespace EstructuraConsole
                             Console.WriteLine("??????????????????????????????????????");
                         }
 
-
                     }
-
-                    
-                    ///insertamo
-                    /// 
-
-
-
                     
                 }
             }
@@ -524,7 +1387,6 @@ namespace EstructuraConsole
                 Console.ForegroundColor = ConsoleColor.White;
 
             }
-
             
         }
 
@@ -609,7 +1471,7 @@ namespace EstructuraConsole
             /// 
             string where = "   TRIM( estatus_operacion || numero_operacion ) = '" + numero_operacion + "' AND extract(MONTH  FROM fecha_pago_abono) = '" + Convert.ToInt16(_mes) + "'  AND extract(YEAR  FROM fecha_pago_abono) = '" + Convert.ToInt32(_year) + "'  ";
             string tabla = "abonos";
-            string columnas = " SUM(capital_pagado) AS capital_pagado  ";
+            string columnas = " SUM(capital_pagado) AS capital_pagado";
             DataTable dtAconos = AccesoLogica.Select(columnas, tabla, where);
 
             int reg3 = dtAconos.Rows.Count;
@@ -658,6 +1520,31 @@ namespace EstructuraConsole
 
         }
 
+
+        public static void InsertaEre05(string _tipo_identificacion_eres_04, string _identificacion_sujeto_eres_04, string _numero_operacion_eres_04, string _tipo_transaccion, DateTime _fecha_cancelacion, string _forma_cancelacion, string _calificacion)
+        {
+          
+            string cadena1 = _tipo_identificacion_eres_04 + "?" + _identificacion_sujeto_eres_04 + "?" + _numero_operacion_eres_04 + "?" + _tipo_transaccion + "?" + _fecha_cancelacion + "?" + _forma_cancelacion + "?" + _calificacion;
+
+            string cadena2 = "_tipo_identificacion_eres_04?_identificacion_sujeto_eres_04?_numero_operacion_eres_04?_tipo_transaccion?_fecha_cancelacion?_forma_cancelacion?_calificacion";
+
+            string cadena3 = "NpgsqlDbType.Varchar?NpgsqlDbType.Varchar?NpgsqlDbType.Varchar?NpgsqlDbType.Varchar?NpgsqlDbType.DateTime?NpgsqlDbType.Varchar?NpgsqlDbType.Varchar";
+
+            try
+            {
+                int resultado = AccesoLogica.Insert(cadena1, cadena2, cadena3, "ins_eres_05");
+                Console.WriteLine("Insertado ....." + _numero_operacion_eres_04);
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("Error al insertar Operacion ->" + _numero_operacion_eres_04 + " ->" + Ex.Message);
+                Console.WriteLine("-------------------------------------------------");
+            }
+
+
+
+        }
 
 
 
