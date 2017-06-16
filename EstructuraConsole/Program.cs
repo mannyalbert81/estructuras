@@ -24,12 +24,102 @@ namespace EstructuraConsole
             Console.WriteLine("");
             Console.WriteLine("Conectando .....");
 
-           // InsertaEstructuras04();
-            InsertaEstructuras05();
+           InsertaEstructuras04();
+            //Verificar();
            
             Console.Read();
 
         }
+
+        public static void Verificar()
+        {
+            Console.WriteLine("Cominezo a insertar .....");
+
+
+            int registros = 0;
+            string _numero_operacion_eres_04 = "";
+            string numero_operacion_descripcion_wf = "";
+            string numero_operacion_descripcion_jv = "";
+            string pertenece = "";
+            DataTable dtEre04_VK = AccesoLogica.Select(" * ", "ere_comparativa", "id_ere_comparativa>0");
+
+            int regCabeza = dtEre04_VK.Rows.Count;
+
+            if (regCabeza > 0)
+            {
+                foreach (DataRow renglon in dtEre04_VK.Rows)
+                {
+                    registros++;
+                    _numero_operacion_eres_04 = Convert.ToString(renglon["numero_operacion_ere_ere_comparativa"].ToString());
+                    numero_operacion_descripcion_jv = Convert.ToString(renglon["numero_operacion_descripcion_jv"].ToString());
+                    numero_operacion_descripcion_wf = Convert.ToString(renglon["numero_operacion_descripcion_wf"].ToString());
+
+                    if (numero_operacion_descripcion_jv == "VISUALTEK" && numero_operacion_descripcion_wf == "SYSTECH")
+                    {
+                        pertenece = "VISUALTEK Y SYSTECH";
+                        try
+                        {
+                            int resul = AccesoLogica.Update("ere_comparativa", "dias_morosidad_ere_comparativa_descripcion = '" + pertenece + "'", "numero_operacion_ere_ere_comparativa= '" + _numero_operacion_eres_04 + "'");
+
+                            Console.WriteLine("ACTUALIZANDO VISUALTEK Y SYSTECH....." + _numero_operacion_eres_04);
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine("Error al insertar Operacion ->" + _numero_operacion_eres_04 + " ->" + Ex.Message);
+                            Console.WriteLine("-------------------------------------------------");
+                        }
+                    }
+
+
+                    if (numero_operacion_descripcion_jv == "VISUALTEK" && numero_operacion_descripcion_wf == "")
+                    {
+                        pertenece = "VISUALTEK";
+                        try
+                        {
+                            int resul = AccesoLogica.Update("ere_comparativa", "dias_morosidad_ere_comparativa_descripcion = '" + pertenece + "'", "numero_operacion_ere_ere_comparativa= '" + _numero_operacion_eres_04 + "'");
+
+                            Console.WriteLine("ACTUALIZANDO VISUALTEK....." + _numero_operacion_eres_04);
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine("Error al insertar Operacion ->" + _numero_operacion_eres_04 + " ->" + Ex.Message);
+                            Console.WriteLine("-------------------------------------------------");
+                        }
+                    }
+
+
+                    if (numero_operacion_descripcion_jv == "" && numero_operacion_descripcion_wf == "SYSTECH")
+                    {
+                        pertenece = "SYSTECH";
+                        try
+                        {
+                            int resul = AccesoLogica.Update("ere_comparativa", "dias_morosidad_ere_comparativa_descripcion = '" + pertenece + "'", "numero_operacion_ere_ere_comparativa= '" + _numero_operacion_eres_04 + "'");
+
+                            Console.WriteLine("ACTUALIZANDO SYSTECH....." + _numero_operacion_eres_04);
+                        }
+                        catch (Exception Ex)
+                        {
+                            Console.WriteLine("-------------------------------------------------");
+                            Console.WriteLine("Error al insertar Operacion ->" + _numero_operacion_eres_04 + " ->" + Ex.Message);
+                            Console.WriteLine("-------------------------------------------------");
+                        }
+                    }
+
+
+
+
+
+                }
+
+
+            }
+
+
+        }
+
+
 
 
         public static void InsertaEstructuras05()
@@ -122,7 +212,7 @@ namespace EstructuraConsole
             //buscamos las cabeza
             int registros = 0;
 
-            DataTable  dtCabeza = AccesoLogica.Select(" * ", "cabeza_eres_04", " numero_operacion LIKE '%%'   ");
+            DataTable  dtCabeza = AccesoLogica.Select(" * ", "cabeza_eres_04_ultima", " numero_operacion LIKE '%%'   ");
 
             int regCabeza = dtCabeza.Rows.Count;
 
@@ -161,11 +251,11 @@ namespace EstructuraConsole
                     {
                         //1
                         string _tipo_identificacion_eres_04 = "E";
-                        if (_identificacion_cliente.Length == 10)
+                        if (_identificacion_cliente.Length <= 10)
                         {
                             _tipo_identificacion_eres_04 = "C";
                         }
-                        if (_identificacion_cliente.Length == 13)
+                        if (_identificacion_cliente.Length > 10)
                         {
                             _tipo_identificacion_eres_04 = "R";
                         }
@@ -211,44 +301,53 @@ namespace EstructuraConsole
                         double _provision_requerida_original_eres_04 = 0;
                         double _provision_constituida_eres_04 = 0;
                         double _cartera_castigada_eres_04 = 0;
+
                         if (_calificacion_propia_eres_04 == "A1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A3")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "D")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "E")
@@ -458,11 +557,11 @@ namespace EstructuraConsole
                     {
                         //1
                         string _tipo_identificacion_eres_04 = "E";
-                        if (_identificacion_cliente.Length == 10)
+                        if (_identificacion_cliente.Length <= 10)
                         {
                             _tipo_identificacion_eres_04 = "C";
                         }
-                        if (_identificacion_cliente.Length == 13)
+                        if (_identificacion_cliente.Length > 10)
                         {
                             _tipo_identificacion_eres_04 = "R";
                         }
@@ -506,42 +605,50 @@ namespace EstructuraConsole
                         double _cartera_castigada_eres_04 = 0;
                         if (_calificacion_propia_eres_04 == "A1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.01;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.02;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "A3")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.05;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.09;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "B2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.19;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C1")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                           // _provision_requerida_original_eres_04 = _saldo_ubicar * 0.39;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "C2")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.59;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "D")
                         {
-                            _provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            //_provision_requerida_original_eres_04 = _saldo_ubicar * 0.99;
+                            _provision_requerida_original_eres_04 = _saldo_ubicar;
                             _provision_constituida_eres_04 = _provision_requerida_original_eres_04;
                         }
                         if (_calificacion_propia_eres_04 == "E")
@@ -812,7 +919,7 @@ namespace EstructuraConsole
                 }
             }
 
-            _saldo_actual = _saldo_actual_ere - _capital_pagado;
+            _saldo_actual = _saldo_actual_ere - 0;
 
             return _saldo_actual;
 
@@ -859,9 +966,10 @@ namespace EstructuraConsole
                 }
             }
 
-            _saldo_actual = _saldo_actual_ere - _capital_pagado;
+            _saldo_actual = _saldo_actual_ere - 0;
             _total_abonos = _capital_pagado;
-            return _total_abonos;
+            //_total_abonos = 0;
+            return _saldo_actual;
 
         }
 
